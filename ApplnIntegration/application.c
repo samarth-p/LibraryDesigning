@@ -53,11 +53,20 @@ main(int argc, char **argv){
     /*Create a new Linked List*/
 
     dll_t *person_db = get_new_dll();
+    if (is_dll_empty(person_db))
+        printf("DLL empty\n");
     add_data_to_dll(person_db, person1);
     add_data_to_dll(person_db, person2);
     add_data_to_dll(person_db, person3);
+    if (is_dll_empty(person_db))
+        printf("DLL empty\n");
+    remove_data_from_dll_by_data_ptr(person_db, person3);
 
     print_person_db(person_db);
-    
+
+    printf("Deleting all data\n");
+    drain_dll(person_db);
+    print_person_db(person_db);
+    printf("Done\n");
     return 0;
 }

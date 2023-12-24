@@ -1,4 +1,6 @@
 /*Header file for Doubly Linked List*/
+#ifndef __DLL__
+#define __DLL__
 
 typedef struct dll_node_{
 
@@ -34,3 +36,5 @@ is_dll_empty (dll_t *dll);
 /* delete all nodes from a dll, but do not free appln data*/
 void
 drain_dll (dll_t *dll);
+
+#endif
